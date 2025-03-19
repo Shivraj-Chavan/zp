@@ -1,12 +1,96 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### **Technologies Used**
+- React.js (Frontend UI)
+- Redux Toolkit (State Management)
+- Tailwind CSS (Styling)
+- Create React Router (Navigation)
+- Axios (API Calls)
+---
 
-Currently, two official plugins are available:
+## **Folder Structure**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+/project-root
+│── /src
+│   │── /Layouts       # Layout components (Header, Footer, Sidebar)
+│   │── /Pages         # Main Page Structure
+│   │   │── /Admin                # Admin Panel
+│   │   │   │── /Pages            # Admin Pages
+│   │   │   │   │── /PageName     # Folder for each Admin Page
+│   │   │   │   │   │── index.jsx # Main Page File
+│   │   │   │   │   │── /Components # Page-specific Components
+│   │   │   │── /Components       # Admin Shared Components (Used across admin pages)
+│   │   │── /User                 # User Panel
+│   │   │   │── /Pages            # User Pages
+│   │   │   │   │── /PageName     # Folder for each User Page
+│   │   │   │   │   │── index.jsx # Main Page File
+│   │   │   │   │   │── /Components # Page-specific Components
+│   │   │   │── /Components       # User Shared Components (Used across user pages)
+│   │── /Components               # Global Reusable Components (Buttons, Modals, Forms, etc.)
+│   │── /Routes                   # Routes Folder (Stores All Route Configurations)
+│   │   │── adminRoutes.js        # Admin-specific Routes
+│   │   │── userRoutes.js         # User-specific Routes
+│   │   │── index.js              # Centralized Route File
+│   │── /Assets                   # Static assets (icons, images, styles, etc.)
+│   │── /Hooks                    # Custom hooks (API calls, authentication, etc.)
+│   │── /Store                    # Redux Store (Actions, Reducers, Store configuration)
+│   │── /Utils                    # Utility functions/helpers
+│── /public                       # Public assets
+│── /config                       # Configuration files
+│── .env                          # Environment Variables
+│── .gitignore
+│── package.json
+│── README.md
 
-## Expanding the ESLint configuration
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## **Installation & Setup**
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Shivraj-Chavan/zp.git
+   cd zp
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+### **Environment Variables**
+Create a `.env` file in the root directory and add the necessary environment variables.
+Example:
+```env
+REACT_APP_API_BASE_URL=https://api.example.com
+```
+
+---
+
+## **Code Guidelines**
+
+- Use **PascalCase** for React components.
+- Use **camelCase** for variables and functions.
+- Follow the **Redux Toolkit** best practices for state management.
+- Use **Axios** for API calls inside the `Hooks/` directory.
+- Keep UI logic separate from business logic.
+
+---
+
+## **Contribution Guidelines**
+
+1. **Branching Strategy**:
+   - `main` → Stable production-ready branch.
+   - `dev` → Development branch for integration.
+   - `feature/branch-name` → Feature-specific branches.
+
+2. **Code Review Process**:
+   - All PRs should be reviewed by at least one developer before merging.
+
+3. **Commit Message Convention**:
+   - Use clear and meaningful commit messages.
+   - Example: `feat(auth): Added login functionality`
+
+---
