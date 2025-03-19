@@ -12,29 +12,29 @@
 ```
 /project-root
 │── /src
-│   │── /Layouts       # Layout components (Header, Footer, Sidebar)
-│   │── /Pages         # Main Page Structure
-│   │   │── /Admin                # Admin Panel
-│   │   │   │── /Pages            # Admin Pages
-│   │   │   │   │── /PageName     # Folder for each Admin Page
+│   │── /layouts       # Layout components (Header, Footer, Sidebar)
+│   │── /pages         # Main Page Structure
+│   │   │── /admin                # Admin Panel
+│   │   │   │── /pages            # Admin Pages
+│   │   │   │   │── /pageName     # Folder for each Admin Page
 │   │   │   │   │   │── index.jsx # Main Page File
-│   │   │   │   │   │── /Components # Page-specific Components
-│   │   │   │── /Components       # Admin Shared Components (Used across admin pages)
-│   │   │── /User                 # User Panel
-│   │   │   │── /Pages            # User Pages
-│   │   │   │   │── /PageName     # Folder for each User Page
+│   │   │   │   │   │── /components # Page-specific Components
+│   │   │   │── /components       # Admin Shared Components (Used across admin pages)
+│   │   │── /user                 # User Panel
+│   │   │   │── /pages            # User Pages
+│   │   │   │   │── /pageName     # Folder for each User Page
 │   │   │   │   │   │── index.jsx # Main Page File
-│   │   │   │   │   │── /Components # Page-specific Components
-│   │   │   │── /Components       # User Shared Components (Used across user pages)
-│   │── /Components               # Global Reusable Components (Buttons, Modals, Forms, etc.)
-│   │── /Routes                   # Routes Folder (Stores All Route Configurations)
+│   │   │   │   │   │── /components # Page-specific Components
+│   │   │   │── /components       # User Shared Components (Used across user pages)
+│   │── /components               # Global Reusable Components (Buttons, Modals, Forms, etc.)
+│   │── /routes                   # Routes Folder (Stores All Route Configurations)
 │   │   │── adminRoutes.js        # Admin-specific Routes
 │   │   │── userRoutes.js         # User-specific Routes
 │   │   │── index.js              # Centralized Route File
-│   │── /Assets                   # Static assets (icons, images, styles, etc.)
-│   │── /Hooks                    # Custom hooks (API calls, authentication, etc.)
-│   │── /Store                    # Redux Store (Actions, Reducers, Store configuration)
-│   │── /Utils                    # Utility functions/helpers
+│   │── /assets                   # Static assets (icons, images, styles, etc.)
+│   │── /hooks                    # Custom hooks (API calls, authentication, etc.)
+│   │── /store                    # Redux Store (Actions, Reducers, Store configuration)
+│   │── /utils                    # Utility functions/helpers
 │── /public                       # Public assets
 │── /config                       # Configuration files
 │── .env                          # Environment Variables
