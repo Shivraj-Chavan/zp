@@ -16,17 +16,31 @@ const loadTranslations = async (lng) => {
   };
 };
 
-i18n
-  .use(LanguageDetector) 
-  .use(initReactI18next) 
-  .init({
-    lng: localStorage.getItem("language") || "en", 
-    fallbackLng: "en",
-    resources: {},
-    interpolation: {
-      escapeValue: false, 
-    },
-  });
+const initI18n = async () => {
+  const defaultLng = localStorage.getItem("language") || "en";
+  const translations = await loadTranslations(defaultLng);
+
+  await i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      lng: defaultLng,
+      fallbackLng: "en",
+      ns: ["common", "auth", "user", "admin"],
+      defaultNS: "common",
+      resources: {
+        [defaultLng]: {
+          common: translations.common,
+          auth: translations.auth,
+          user: translations.user,
+          admin: translations.admin,
+        },
+      },
+      interpolation: {
+        escapeValue: false,
+      },
+    });
+};
 
 i18n.on("languageChanged", async (lng) => {
   const translations = await loadTranslations(lng);
@@ -36,4 +50,5 @@ i18n.on("languageChanged", async (lng) => {
   i18n.addResources(lng, "admin", translations.admin);
 });
 
-export default i18n;
+export default initI18n;
+export { i18n };

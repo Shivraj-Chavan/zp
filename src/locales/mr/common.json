@@ -1,4 +1,26 @@
 {
     "welcome": "आपले स्वागत आहे!",
-    "language": "भाषा"
+    "language": "भाषा",
+    "menu": {
+      "home": "मुखपृष्ठ",
+      "online_certificates": {
+        "title": "ऑनलाइन दाखला",
+        "submenu": {
+          "caste_certificate": "जातीचा दाखला",
+          "birth_certificate": "जन्म दाखला",
+          "bpl_certificate": "दारिद्रय रेषखालील दाखला",
+          "marriage_certificate": "विवाह दाखला"
+        }
+      },
+      "water_supply": "पाणीपुरवठा",
+      "property_tax": "मालमत्तानिधी",
+      "construction": "बांधकाम",
+      "tax_payment": "कर भरणा",
+      "about_gram_panchayat": "ग्राम पंचायतविषयी",
+      "officials": "मान्यवर व अधिकारी",
+      "gram_vibhag": "ग्राम विभाग"
+    },
+    "slide1":"अकलूज ग्राम पंचायत,अकलूज",
+    "slide2":"ग्रामपंचायत आपल्यासाठी, आपल्या सेवेत",
+    "slide3":"डिजिटल ग्रामपंचायत, पारदर्शक प्रशासन"
   }
