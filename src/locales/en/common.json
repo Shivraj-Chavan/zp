@@ -1,5 +1,26 @@
 {
-    "welcome": "Welcome!",
-    "language": "Language"
-  }
-  
+  "menu": {
+    "home": "Home",
+    "online_certificates": {
+      "title": "Online Certificates",
+      "submenu": {
+        "caste_certificate": "Caste Certificate",
+        "birth_certificate": "Birth Certificate",
+        "bpl_certificate": "BPL Certificate",
+        "marriage_certificate": "Marriage Certificate"
+      }
+    },
+    "water_supply": "Water Supply",
+    "property_tax": "Property Tax",
+    "construction": "Construction",
+    "tax_payment": "Tax Payment",
+    "about_gram_panchayat": "About Gram Panchayat",
+    "officials": "Officials",
+    "gram_vibhag": "Village Divisions"
+
+    
+  },
+  "slide1":"Akluj Gram Panchayat, Akluj",
+  "slide2":"Gram Panchayat for You, in Your Service",
+  "slide3":" Digital Gram Panchayat, Transparent Governance"
+}
