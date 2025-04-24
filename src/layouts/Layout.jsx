@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <>
     <Header/>
-      <main className="min-h-screen px-4 py-6">
+      <main className="min-h-screen px-4 py-6 pt-[180px] ">
         <Outlet/>
       </main>
     <Footer/>

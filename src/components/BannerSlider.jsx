@@ -1,63 +1,69 @@
-import { useState, useEffect,useMemo } from "react"
-import { Link } from "react-router-dom"
-import {FaChevronLeft , FaChevronRight } from "react-icons/fa"
-import slide1 from "../assets/Akluj-Gram-panchayat.jpg"
-import slide2 from "../assets/akluj1.jpg"
-import slide3 from "../assets/Akluj17 solapur.jpg"
+import { useState, useEffect, useMemo } from "react";
+import { Link } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import slide1 from "../assets/Akluj-Gram-panchayat.jpg";
+import slide2 from "../assets/akluj1.jpg";
+import slide3 from "../assets/Akluj17 solapur.jpg";
 import { useTranslation } from "react-i18next";
 
-
-
 export default function BannerSlider() {
- 
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const { t } = useTranslation();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const { t } = useTranslation(); // Hook to get current language translations
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-  }
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
-  }
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
-    }, 15000)
-    return () => clearInterval(interval)
-  }, [])
-  const slides = useMemo(() => [
-    {
-      id: 1,
-      title: t("common:slide1"),
-      description:t("common:slide1"),
-      cta: "",
-      ctaLink: "#",
-      image: slide1,
-    },
-    {
-      id: 2,
-      title: t("common:slide2"),
-      description: t("common:slide2"),
-      cta: "",
-      ctaLink: "#",
-      image: slide2,
-    },
-    {
-      id: 3,
-      title: t("common:slide3"),
-      description: t("common:slide3"),
-      cta: "",
-      ctaLink: "#",
-      image:slide3,
-    },
-  ], [t]);
+      nextSlide();
+    }, 15000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Use useMemo to prevent unnecessary recalculations when language changes
+  const slides = useMemo(
+    () => [
+      {
+        id: 1,
+        title: t("slide1Title"), // Dynamic translation
+        description: t("slide1Description"), // Dynamic description
+        cta: "",
+        ctaLink: "#",
+        image: slide1,
+      },
+      {
+        id: 2,
+        title: t("slide2Title"),
+        description: t("slide2Description"),
+        cta: "",
+        ctaLink: "#",
+        image: slide2,
+      },
+      {
+        id: 3,
+        title: t("slide3Title"),
+        description: t("slide3Description"),
+        cta: "",
+        ctaLink: "#",
+        image: slide3,
+      },
+    ],
+    [t] // Recalculate when language changes
+  );
+
   return (
     <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         >
           <div className="relative w-full h-full">
             <img
@@ -65,11 +71,15 @@ export default function BannerSlider() {
               alt={slide.title}
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-transparent flex items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent flex items-center">
               <div className="container mx-auto px-4">
                 <div className="max-w-xxl ms-10">
-                  <h1 className="ps-2 lg:ps-8 text-4xl md:text-6xl font-bold text-white mb-4">{slide.title}</h1>
-                  <p className="ps-2  lg:ps-8  text-xl text-white/90 mb-8">{slide.description}</p>
+                  <h1 className="ps-2 lg:ps-8 text-4xl md:text-6xl font-bold text-white mb-4">
+                    {slide.title}
+                  </h1>
+                  <p className="ps-2 lg:ps-8 text-xl text-white/90 mb-8">
+                    {slide.description}
+                  </p>
                   <Link to={slide.ctaLink} className="btn-primary">
                     {slide.cta}
                   </Link>
@@ -102,11 +112,13 @@ export default function BannerSlider() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${index === currentSlide ? "bg-orange-500" : "bg-white/50"}`}
+            className={`w-3 h-3 rounded-full ${
+              index === currentSlide ? "bg-orange-500" : "bg-white/50"
+            }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
