@@ -57,8 +57,8 @@ export default function Header() {
                 className="h-12 w-12 rounded-full"
               />
               <span className="text-sm lg:text-lg font-bold text-green-800 leading-tight">
-                Akluj Gram Panchayat, Akluj <br />
-                अकलूज ग्राम पंचायत,अकलूज
+                Yashvantnagar Grampanchayat, Yashvantnagar <br />
+                यशवंतनगर ग्रामपंचायत, यशवंतनगर
               </span>
             </div>
           </Link>

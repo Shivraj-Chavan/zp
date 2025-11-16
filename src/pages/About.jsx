@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 import Akluj_Gram_panchayat from "../assets/Akluj-Gram-panchayat.jpg";
+import image4 from './../assets/image4.jpg'
 
 export default function About() {
   const { t } = useTranslation(); // Initialize the translation function
@@ -28,8 +29,8 @@ export default function About() {
           {/* Image Column */}
           <div className="md:w-1/2 flex justify-center items-center">
             <img
-              src={Akluj_Gram_panchayat}
-              alt="Akluj Gram Panchayat"
+              src={image4}
+              alt="Yashvantnagar Gram Panchayat"
               className="w-3/4 h-auto rounded-lg shadow-md"
             />
           </div>

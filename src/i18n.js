@@ -26,8 +26,8 @@ const resources = {
         support: "Support",
         get_started: "Get Started",
       },
-      slide1Title: "Akluj Gram Panchayat, Akluj",
-      slide1Description: "Description of Akluj Gram Panchayat",
+      slide1Title: "Yashvantnagar Gram Panchayat, Akluj",
+      slide1Description: "Description of Yashvantnagar Gram Panchayat",
       slide2Title: "Gram Panchayat for You, in Your Service",
       slide2Description: "Description of Gram Panchayat Service",
       slide3Title: "Digital Gram Panchayat, Transparent Governance",
@@ -89,7 +89,7 @@ const resources = {
 
       about_section: {
         title: "About the Department",
-        description: `Akluj is well connected by road to major cities. A turn near Indapur on the Pune-Solapur highway leads to Akluj, located about 160 km from Pune. On the banks of the Nira River stands the Akluj Fort, a historic structure. The fort has fountains, greenery, and flower gardens at several places. Under the guidance of historian Babasaheb Purandare, sculptors Dinkarrao Thopte and Avinash Thopte have created a magnificent Shivsrushti inside the fort. The Mohite-Patil family played a special role in restoring the fort and creating the Shivsrushti. The restoration preserved the original structure while maintaining harmony with the new construction.`,
+        description: `Yashwantnagar is a village located in Malshiras taluka of Solapur district. This village is 119 km away from the district headquarter Solapur.Akluj is  the major city near Yashwantnagar. The village has religious tourist attractions like the Shiv Parvati Temple and Maruti Temple as well as entertainment attractions like multimedia leisure shows. Also, famous places like Anandi Ganesh Temple, Sayajiraje Water Park, Shiv Srushti Fort and Aklai Temple are within walking distance.`,
         more: "Read More"
       },
 
@@ -123,8 +123,8 @@ const resources = {
         support: "सहाय्य",
         get_started: "सुरू करा",
       },
-      slide1Title: "अकलूज ग्राम पंचायत,अकलूज",
-      slide1Description: "अकलूज ग्राम पंचायताची माहिती",
+      slide1Title: "यशवंतनगर ग्रामपंचायत, यशवंतनगर",
+      slide1Description: "यशवंतनगर ग्राम पंचायताची माहिती",
       slide2Title: "ग्रामपंचायत आपल्यासाठी, आपल्या सेवेत",
       slide2Description: "ग्राम पंचायत सेवा माहिती",
       slide3Title: "डिजिटल ग्रामपंचायत, पारदर्शक प्रशासन",
@@ -186,7 +186,7 @@ const resources = {
 
       about_section: {
         title: "विभागाबद्दल",
-        description: `अकलूज हे सोलापूर जिल्ह्यातील माळशिरस तालुक्यातील महत्त्वाचे शहर रस्त्याने सर्व शहरांशी जोडलेले आहे. पुणे-सोलापूर मार्गावर इंदापूर येथून अकलूजला जाणारा फाटा असुन पुणे -अकलूज अंतर १६० कि.मी आहे. या शहरात नीरा नदीच्या काठावर अकलुज(Akluj Fort) भूईकोट किल्ला उभा आहे. किल्ल्यात ठिकठिकाणी कारंजी, हिरवळ व फुलझाडे लावण्यात आलेली असुन शिवशाहीर बाबासाहेब पुरंदरे यांच्या मार्गदर्शनाखाली शिल्पकार श्री दिनकरराव थोपटे व अविनाश थोपटे यांनी किल्ल्यात एक भव्य शिवसृष्टी उभारली आहे. किल्ल्याचा जिर्णोध्दार व शिवसृष्टी उभारण्यासाठी मोहीते पाटील घराण्याने विशेष प्रयत्न केलेले आहेत. किल्ल्याचा जिर्णोध्दार करताना मूळ बांधकामास धक्का न लावता नवीन बांधकामाचा समतोल साधला गेला आहे.`,
+        description: `यशवंतनगर हे सोलापूर जिल्ह्यातील माळशिरस तालुक्यात वसलेले एक गाव आहे. हे गाव सोलापूर जिल्हा मुख्यालयापासून ११९ किमी अंतरावर आहे. अकलूज हे यशवंतनगर जवळील प्रमुख शहर आहे. गावात शिव पार्वती मंदिर आणि मारुती मंदिर सारखी धार्मिक पर्यटन स्थळे तसेच मल्टीमीडिया फुरसतीचे कार्यक्रम सारखी मनोरंजन स्थळे आहेत. तसेच, आनंदी गणेश मंदिर, सयाजीराजे वॉटर पार्क, शिवसृष्टी किल्ला आणि अकलई मंदिर सारखी प्रसिद्ध ठिकाणे चालण्याच्या अंतरावर आहेत.`,
         more: "अधिक माहिती"
       },
 
