@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import slide1 from "../assets/Akluj-Gram-panchayat.jpg";
+// import slide1 from "../assets/Akluj-Gram-panchayat.jpg";
+import slide1 from './../assets/image4.jpg'
 import slide2 from "../assets/akluj1.jpg";
 import slide3 from "../assets/Akluj17 solapur.jpg";
 import { useTranslation } from "react-i18next";
