@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../components/LanguageSwitcher ";
 
 export default function Header() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   const location = useLocation();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,6 +17,13 @@ export default function Header() {
   };
 
   const isActive = (path) => location.pathname === path;
+  const currentLang = i18n.language;
+
+const changeLanguage = (lang) => {
+  i18n.changeLanguage(lang);
+  localStorage.setItem("i18nextLng", lang);
+};
+
 
   const navItems = useMemo(() => [
     {
@@ -25,15 +33,27 @@ export default function Header() {
     },
     {
       name: t("menu.online_certificates.title"),
-      to: "/online-certificates",
       hasSubmenu: true,
       submenu: [
-        { name: t("menu.online_certificates.submenu.caste_certificate"), to: "/online-certificates/caste" },
-        { name: t("menu.online_certificates.submenu.birth_certificate"), to: "/online-certificates/birth" },
-        { name: t("menu.online_certificates.submenu.bpl_certificate"), to: "/online-certificates/bpl" },
-        { name: t("menu.online_certificates.submenu.marriage_certificate"), to: "/online-certificates/marriage" },
+        {
+          name: t("menu.online_certificates.submenu.birth_certificate"),
+          to: "/birth-certificate",
+        },
+        {
+          name: t("menu.online_certificates.submenu.caste_certificate"),
+          to: "/caste-certificate",
+        },
+        {
+          name: t("menu.online_certificates.submenu.bpl_certificate"),
+          to: "/bpl-certificate",
+        },
+        {
+          name: t("menu.online_certificates.submenu.marriage_certificate"),
+          to: "/marriage-certificate",
+        },
       ],
     },
+    
     { name: t("menu.water_supply"), to: "/water-supply", hasSubmenu: false },
     { name: t("menu.property_tax"), to: "/property-tax", hasSubmenu: false },
     { name: t("menu.construction"), to: "/construction", hasSubmenu: false },
@@ -48,18 +68,22 @@ export default function Header() {
 
       {/* Top Bar */}
       <div className="  bg-white border-b border-green-100">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-2 py-2 flex items-center justify-between gap-2">
+
+
           <Link to="/" className="flex items-center">
             <div className="flex items-center space-x-2">
               <img
                 src="https://ext.same-assets.com/4149277301/1189064963.png"
                 alt="Logo"
-                className="h-12 w-12 rounded-full"
+                className="h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 rounded-full flex-shrink-0"
               />
-              <span className="text-sm lg:text-lg font-bold text-green-800 leading-tight">
-                Yashvantnagar Grampanchayat, Yashvantnagar <br />
-                यशवंतनगर ग्रामपंचायत, यशवंतनगर
-              </span>
+              <span className="font-bold text-green-800 leading-tight text-[11px] sm:text-sm md:text-lg">
+  Yashvantnagar Grampanchayat, Yashvantnagar <br />
+  यशवंतनगर ग्रामपंचायत, यशवंतनगर
+</span>
+
+
             </div>
           </Link>
 
@@ -68,8 +92,8 @@ export default function Header() {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/contact" className="text-green-700 hover:text-orange-500">{t("menu.contact")}</Link>
-            <Link to="/support" className="text-green-700 hover:text-orange-500">{t("menu.support")}</Link>
-            <Link to="/get-started" className="btn-primary">{t("menu.get_started")}</Link>
+            {/* <Link to="/support" className="text-green-700 hover:text-orange-500">{t("menu.support")}</Link>
+            <Link to="/get-started" className="btn-primary">{t("menu.get_started")}</Link> */}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -81,6 +105,7 @@ export default function Header() {
 
       {/* Desktop Nav */}
       <nav className="bg-green-50 border-b border-green-100 hidden md:block">
+
         <div className="container mx-auto px-4">
           <ul className="flex space-x-2">
             {navItems.map((item) => (
@@ -94,7 +119,7 @@ export default function Header() {
                 </Link>
 
                 {item.hasSubmenu && (
-                  <div className="absolute left-0 hidden group-hover:block bg-white border shadow-lg rounded-md mt-1 z-10">
+                  <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md mt-1 z-10">
                     <ul className="py-2">
                       {item.submenu.map((sub) => (
                         <li key={sub.name}>
@@ -117,7 +142,8 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-green-100 px-4 pb-4">
+        <div className="md:hidden bg-white border-t border-green-100 px-4 pb-4 max-h-[70vh] overflow-y-auto">
+
           {navItems.map((item) => (
             <div key={item.name}>
               <button
@@ -141,7 +167,7 @@ export default function Header() {
                       key={subItem.name}
                       to={subItem.to}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-green-700 hover:bg-green-50 rounded-md"
+                      className="block px-2 py-2 text-green-700 hover:bg-green-50 rounded-md"
                     >
                       {subItem.name}
                     </Link>
@@ -153,8 +179,8 @@ export default function Header() {
 
           <div className="pt-4 border-t border-green-100 mt-4 space-y-2">
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-green-700 hover:bg-green-50 rounded-md">{t("menu.contact")}</Link>
-            <Link to="/support" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-green-700 hover:bg-green-50 rounded-md">{t("menu.support")}</Link>
-            <Link to="/get-started" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 btn-primary w-full text-center">{t("menu.get_started")}</Link>
+            {/* <Link to="/support" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-green-700 hover:bg-green-50 rounded-md">{t("menu.support")}</Link>
+            <Link to="/get-started" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 btn-primary w-full text-center">{t("menu.get_started")}</Link> */}
           </div>
         </div>
       )}

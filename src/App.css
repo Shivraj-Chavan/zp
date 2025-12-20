@@ -77,9 +77,10 @@
   display: block;
   color: var(--primary-color);
   padding: 8px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #c9cad1f3 ;
   font-size: 15px;
 }
+
 
 .updates-list a i {
   color: var(--secondary-color);
@@ -176,8 +177,22 @@
   }
 
   .official-img-container {
-      width: 120px;
-      height: 120px;
+      width: auto;
+      height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .official-card {
+    margin-bottom: 12px;
+  }
+
+  .official-card h5 {
+    font-size: 16px;
+  }
+
+  .official-card p {
+    font-size: 13px;
   }
 }
 
@@ -230,4 +245,30 @@
       max-width: 1418px;
   }
 }
+
+@media (max-width: 800px) {
+  .contact-page, .contact-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .bg-green-600 {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .break-words {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 

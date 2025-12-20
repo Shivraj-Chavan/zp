@@ -32,19 +32,22 @@ const Officials = () => {
       </div>
 
       {/* Other officials */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {otherOfficials.map((official, index) => (
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-">
+
+      {otherOfficials.map((official, index) => (
           <div
             key={index + 2}
-            className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center justify-center transition hover:shadow-lg"
+            className="bg-white rounded-xl shadow-sm p-3 sm:p-6 flex flex-col items-center justify-center transition md:hover:shadow-lg"
           >
-            <div className="w-16 h-16 rounded-full bg-green-200 flex items-center justify-center text-green-800 font-bold text-xl mb-4">
+            <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-green-200 flex items-center justify-center text-sm sm:text-xl mb-2 sm:mb-4">
+
               {official.name.charAt(0)}
             </div>
-            <h3 className="text-xl font-semibold text-center text-gray-900">
+            <h3 className="text-sm sm:text-xl font-semibold text-center text-gray-900 leading-tight">
+
               {official.name}
             </h3>
-            <p className="text-sm text-center text-gray-600">{official.role}</p>
+            <p className="text-xs sm:text-sm text-center text-gray-600">{official.role}</p>
           </div>
         ))}
       </div>
@@ -53,3 +56,6 @@ const Officials = () => {
 };
 
 export default Officials;
+
+
+

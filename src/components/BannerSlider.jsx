@@ -60,7 +60,8 @@ export default function BannerSlider() {
   );
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full pt-6 md:pt-8 h-[500px] md:h-[600px] overflow-hidden">
+
       {slides.map((slide, index) => (
         <div
           key={slide.id}

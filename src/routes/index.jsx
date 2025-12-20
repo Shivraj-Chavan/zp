@@ -11,12 +11,13 @@ import TaxPayment from '../pages/TaxPayment';
 import Officials from '../pages/Officials';
 import GramVibhag from '../pages/GramVibhag';
 
-import OnlineCertificates from '../pages/OnlineCertificates/OnlineCertificates';
+
 import CasteCertificate from '../pages/OnlineCertificates/CasteCertificate';
 import BirthCertificate from '../pages/OnlineCertificates/BirthCertificate';
 import BPLCertificate from '../pages/OnlineCertificates/BPLCertificate';
 import MarriageCertificate from '../pages/OnlineCertificates/MarriageCertificate';
-import About from '../pages/About';
+
+import AboutUsPage from '../pages/aboutus/AboutUsPage';
 
 const routes = createBrowserRouter([
   {
@@ -31,16 +32,20 @@ const routes = createBrowserRouter([
       { path: 'property-tax', element: <PropertyTax /> },
       { path: 'construction', element: <Construction /> },
       { path: 'tax-payment', element: <TaxPayment /> },
-      { path: 'about-gram-panchayat', element: <About /> },
+      { path: 'about-gram-panchayat', element: <AboutUsPage /> },
       { path: 'officials', element: <Officials /> },
       { path: 'gram-vibhag', element: <GramVibhag /> },
 
-      // Online Certificates main + sub routes
-      { path: 'online-certificates', element: <OnlineCertificates /> },
-      { path: 'online-certificates/caste', element: <CasteCertificate /> },
-      { path: 'online-certificates/birth', element: <BirthCertificate /> },
-      { path: 'online-certificates/bpl', element: <BPLCertificate /> },
-      { path: 'online-certificates/marriage', element: <MarriageCertificate /> },
+
+
+      { path: "birth-certificate", element: <BirthCertificate/>},
+      { path: "caste-certificate", element: <CasteCertificate/>},
+      { path: "bplcertificate", element: <BPLCertificate/>},
+      
+      { path: "marriage-certificate", element: <MarriageCertificate/>},
+      
+
+     
     ],
   },
 ]);
