@@ -67,7 +67,6 @@ export default function Contact() {
       newErrors.name = t("contact.errors.name_max");
     }
     
-    
    
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
