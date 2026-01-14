@@ -219,7 +219,7 @@ function CasteCertificate() {
                 <button
                   onClick={() => {
                     setSelectedOption("download");
-                    window.open("/public/जातीचा दाखला अर्ज व कागदपत्रे.pdf", "_blank");
+                    window.open("/जातीचा दाखला अर्ज व कागदपत्रे.pdf", "_blank");
                   }}
                   className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-2.5 sm:py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-sm md:text-base"
                 >

@@ -74,7 +74,7 @@ export default function Form8Certificate() {
                 </div>
                 <button  onClick={() => {
                     setSelectedOption("download");
-                    window.open("/public/नमुना ८ उतारा मागणी अर्ज.pdf", "_blank");
+                    window.open("/नमुना ८ उतारा मागणी अर्ज.pdf", "_blank");
                   }}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />{t("form8_certificate.downloadBtn")}

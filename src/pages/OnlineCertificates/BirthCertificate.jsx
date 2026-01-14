@@ -261,7 +261,7 @@ const fileInputs = useRef({});
                   <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-3">{t("birth_certificate.option1Title")}</h3>
                   <p className="text-sm md:text-base text-gray-600 mb-6">{t("birth_certificate.option1Desc")}</p>
                 </div>
-                <button onClick={() => { setSelectedOption("download"); window.open("/public/जन्म अर्ज.pdf", "_blank"); }} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
+                <button onClick={() => { setSelectedOption("download"); window.open("/जन्म अर्ज.pdf", "_blank"); }} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 text-sm md:text-base">
                   <Download className="w-4 h-4 md:w-5 md:h-5" />
                   {t("birth_certificate.downloadBtn")}
                 </button>
@@ -323,12 +323,12 @@ const fileInputs = useRef({});
                   {t("birth_certificate.childDetails")}
                 </h3>
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 mb-4 rounded-r-lg">
-  <p className="text-sm text-yellow-800 leading-relaxed">
-    {i18n.language === "en"
-      ? "Please enter the child's full and correct name. This name is permanent and cannot be changed in the future."
-      : "कृपया बाळाचे पूर्ण आणि अचूक नाव भरा. हे नाव कायमस्वरूपी असते व भविष्यात बदलता येत नाही."}
-  </p>
-</div>
+                <p className="text-sm text-yellow-800 leading-relaxed">
+                  {i18n.language === "en"
+                    ? "Please enter the child's full and correct name. This name is permanent and cannot be changed in the future."
+                    : "कृपया बाळाचे पूर्ण आणि अचूक नाव भरा. हे नाव कायमस्वरूपी असते व भविष्यात बदलता येत नाही."}
+                </p>
+              </div>
 
                 <div className="space-y-4">
                   <div>
@@ -480,7 +480,7 @@ const fileInputs = useRef({});
                   {t("birth_certificate.educationOccupation")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div>
+              <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">{t("birth_certificate.fields.motherEdu")} <span className="text-red-500">*</span></label>
                     <select name="motherEducation" value={formData.motherEducation || ""} onChange={handleChange} onBlur={handleBlur} className={`w-full px-3 md:px-4 py-2 md:py-3 border-2 rounded-lg focus:outline-none text-sm md:text-base ${touched.motherEducation && errors.motherEducation ? "border-red-500" : "border-gray-200 focus:border-green-500"}`}>
                       {educationOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
@@ -500,39 +500,39 @@ const fileInputs = useRef({});
                       {occupationOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                     </select>
                     {formData.motherOccupation === "other" && (
-  <div className="mt-2">
-    <label className="block text-sm font-medium text-gray-700 mb-2">
-      {i18n.language === "en"
-        ? "Please specify occupation"
-        : "कृपया व्यवसाय लिहा"}
-      <span className="text-red-500">*</span>
-    </label>
+                      <div className="mt-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          {i18n.language === "en"
+                            ? "Please specify occupation"
+                            : "कृपया व्यवसाय लिहा"}
+                          <span className="text-red-500">*</span>
+                        </label>
 
-    <input
-      type="text"
-      name="motherOccupationOther"
-      value={formData.motherOccupationOther || ""}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      placeholder={
-        i18n.language === "en"
-          ? "Enter occupation"
-          : "व्यवसाय लिहा"
-      }
-      className={`w-full px-3 py-2 border-2 rounded-lg focus:outline-none text-sm ${
-        touched.motherOccupationOther && errors.motherOccupationOther
-          ? "border-red-500"
-          : "border-gray-200 focus:border-green-500"
-      }`}
-    />
+                        <input
+                          type="text"
+                          name="motherOccupationOther"
+                          value={formData.motherOccupationOther || ""}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder={
+                            i18n.language === "en"
+                              ? "Enter occupation"
+                              : "व्यवसाय लिहा"
+                          }
+                          className={`w-full px-3 py-2 border-2 rounded-lg focus:outline-none text-sm ${
+                            touched.motherOccupationOther && errors.motherOccupationOther
+                              ? "border-red-500"
+                              : "border-gray-200 focus:border-green-500"
+                          }`}
+                        />
 
-    {touched.motherOccupationOther && errors.motherOccupationOther && (
-      <p className="text-red-500 text-xs mt-1">
-        {errors.motherOccupationOther}
-      </p>
-    )}
-  </div>
-)}
+                        {touched.motherOccupationOther && errors.motherOccupationOther && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.motherOccupationOther}
+                          </p>
+                        )}
+                      </div>
+                    )}
                     {touched.motherOccupation && errors.motherOccupation && <p className="text-red-500 text-xs md:text-sm mt-1">{errors.motherOccupation}</p>}
                   </div>
                   
@@ -543,39 +543,39 @@ const fileInputs = useRef({});
                       {occupationOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                     </select>
                     {formData.fatherOccupation === "other" && (
-  <div className="mt-2">
-    <label className="block text-sm font-medium text-gray-700 mb-2">
-      {i18n.language === "en"
-        ? "Please specify occupation"
-        : "कृपया व्यवसाय लिहा"}
-      <span className="text-red-500">*</span>
-    </label>
+                    <div className="mt-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        {i18n.language === "en"
+                          ? "Please specify occupation"
+                          : "कृपया व्यवसाय लिहा"}
+                        <span className="text-red-500">*</span>
+                      </label>
 
-    <input
-      type="text"
-      name="fatherOccupationOther"
-      value={formData.fatherOccupationOther || ""}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      placeholder={
-        i18n.language === "en"
-          ? "Enter occupation"
-          : "व्यवसाय लिहा"
-      }
-      className={`w-full px-3 py-2 border-2 rounded-lg focus:outline-none text-sm ${
-        touched.fatherOccupationOther && errors.fatherOccupationOther
-          ? "border-red-500"
-          : "border-gray-200 focus:border-green-500"
-      }`}
-    />
+                      <input
+                        type="text"
+                        name="fatherOccupationOther"
+                        value={formData.fatherOccupationOther || ""}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder={
+                          i18n.language === "en"
+                            ? "Enter occupation"
+                            : "व्यवसाय लिहा"
+                        }
+                        className={`w-full px-3 py-2 border-2 rounded-lg focus:outline-none text-sm ${
+                          touched.fatherOccupationOther && errors.fatherOccupationOther
+                            ? "border-red-500"
+                            : "border-gray-200 focus:border-green-500"
+                        }`}
+                      />
 
-    {touched.fatherOccupationOther && errors.fatherOccupationOther && (
-      <p className="text-red-500 text-xs mt-1">
-        {errors.fatherOccupationOther}
-      </p>
-    )}
-  </div>
-)}
+                      {touched.fatherOccupationOther && errors.fatherOccupationOther && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.fatherOccupationOther}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
                     {touched.fatherOccupation && errors.fatherOccupation && <p className="text-red-500 text-xs md:text-sm mt-1">{errors.fatherOccupation}</p>}
                   </div>
@@ -797,9 +797,6 @@ const fileInputs = useRef({});
       : "-"
   }
 />
-
-
-
       </div>
 
       <div className="flex justify-end gap-3 mt-6">
@@ -817,9 +814,6 @@ const fileInputs = useRef({});
     </div>
   </div>
 )}
-
-
-
 
     </div>
   );

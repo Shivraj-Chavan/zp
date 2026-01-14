@@ -86,7 +86,6 @@ export default function Footer() {
                   </svg>
                   <span>+91 9090552002</span>
 
-
                 </div>
                 <div className="flex items-center space-x-2">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +151,7 @@ export default function Footer() {
           <div className="mb-8">
             <h3 className="text-lg font-bold mb-4">Location</h3>
             <div className="w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
-              <iframe
+              {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.1998217654635!2d73.85674331490093!3d18.520430287410866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07f6e0e0e0f%3A0x6e1e0f0e0e0e0e0e!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -161,7 +160,11 @@ export default function Footer() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Yashvantnagar Location"
-              ></iframe>
+              ></iframe> */}
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3436.37085164477!2d75.0106624!3d17.8707933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc4751c3a613109%3A0xe1c214618dc5630!2sGram%20Panchayat!5e1!3m2!1sen!2sin!4v1768390927710!5m2!1sen!2sin" 
+              width="600" height="450"  style={{ border: 0 }}
+              allowfullscreen="" loading="lazy" 
+               referrerpolicy="no-referrer-when-downgrade" title="Yashvantnagar Location"></iframe>
             </div>
           </div>
         </div>

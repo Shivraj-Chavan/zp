@@ -4,16 +4,12 @@ import { FiMenu, FiX, FiChevronDown, FiUser } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../components/LanguageSwitcher ";
 
-
-
 export default function Header() {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
   const certMenuRef = useRef(null);
-
-
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -66,7 +62,26 @@ export default function Header() {
   );
 
 
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (
+  //       certMenuRef.current &&
+  //       !certMenuRef.current.contains(event.target)
+  //     ) {
+  //       setActiveSubmenu(null);
+  //     }
+  //   };
+  
+  //   document.addEventListener("click", handleClickOutside);
+  
+  //   return () => {
+  //     document.removeEventListener("click", handleClickOutside);
+  //   };
+  // }, []);
+
   useEffect(() => {
+    if (mobileMenuOpen) return; 
+  
     const handleClickOutside = (event) => {
       if (
         certMenuRef.current &&
@@ -81,7 +96,15 @@ export default function Header() {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [mobileMenuOpen]);
+  
+  
+
+  const handleMobileNavigate = (path) => {
+    navigate(path);
+    setMobileMenuOpen(false);
+    setActiveSubmenu(null);
+  };
   
 
   return (
@@ -211,7 +234,7 @@ export default function Header() {
       </nav>
 
       {/* ================= MOBILE NAV (UNCHANGED) ================= */}
-      {mobileMenuOpen && (
+      {/* {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-green-100 px-4 pb-4 max-h-[70vh] overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.name}>
@@ -250,7 +273,58 @@ export default function Header() {
             </div>
           ))}
         </div>
-      )}
-    </header>
-  );
-}
+      )} */}
+
+
+      {/* ================= MOBILE NAV (FIXED) ================= */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-green-100 px-4 pb-4 max-h-[70vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            {navItems.map((item) => (
+              <div key={item.name}>
+                {/* MAIN ITEM */}
+                <button
+                  onClick={() => {
+                    if (item.hasSubmenu) {
+                      setActiveSubmenu(
+                        activeSubmenu === item.name ? null : item.name
+                      );
+                    } else {
+                      handleMobileNavigate(item.to);
+                    }
+                  }}
+                  className="w-full flex justify-between items-center px-3 py-2 text-green-800 hover:bg-green-50 rounded-md"
+                >
+                  {item.name}
+
+                  {item.hasSubmenu && (
+                    <FiChevronDown
+                      className={`transition-transform ${
+                        activeSubmenu === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
+                </button>
+
+
+                {/* SUBMENU */}
+                {item.hasSubmenu && activeSubmenu === item.name && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    {item.submenu.map((sub) => (
+                      <button
+                        key={sub.name}
+                        onClick={() => handleMobileNavigate(sub.to)}
+                        className="block w-full text-left px-2 py-2 text-green-700 hover:bg-green-50 rounded-md"
+                      >
+                        {sub.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+            </header>
+          );
+        }
