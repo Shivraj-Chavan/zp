@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://69.62.84.113:5001/api", // backend url
+  // baseURL: "http://69.62.84.113:5001/api", // backend url
+    baseURL: "https://api.yashwantnagargram.co.in/api",
 });
 
 export const googleLogin = (data) =>
