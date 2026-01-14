@@ -5,6 +5,41 @@ const API = axios.create({
     baseURL: "https://api.yashwantnagargram.co.in/api",
 });
 
+API.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token"); // or sessionStorage
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+/* ================= RESPONSE INTERCEPTOR ================= */
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response) {
+      // Token expired / unauthorized
+      if (error.response.status === 401) {
+        console.log("Unauthorized! Logging out...");
+
+        localStorage.removeItem("token");
+
+        // Optional redirect
+        window.location.href = "/login";
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+
 export const googleLogin = (data) =>
   API.post("/users/google-login", data);
 
