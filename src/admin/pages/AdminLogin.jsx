@@ -34,18 +34,18 @@ export default function AdminLogin() {
         });
 
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("adminName", res.data.user.name);
+        // localStorage.setItem("adminName", res.data.user.name);
         // localStorage.setItem("role", user.role); 
         // localStorage.setItem("adminName", user.name);
 
         // setIsLoggedIn(true);       
 
-        // if (user.role === "admin") {
-        //   navigate("/admin");
-        // } else {
-        //   navigate("/");
-        // }
-        navigate("/admin");
+        if (res.data.user.role === "admin") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
+        // navigate("/admin");
       } catch (err) {
         console.error("Google login failed", err);
         alert("Login failed");
