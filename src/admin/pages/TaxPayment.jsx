@@ -207,14 +207,14 @@ export default function TaxPayment() {
             </div>
 
             <button className="flex items-center justify-center gap-2 w-28 px-4 py-3 border-2 border-gray-200 rounded-lg hover:bg-gray-50 transition-all font-medium">
-  <Filter className="w-5 h-5" />
-  <span>Filter</span>
-</button>
+            <Filter className="w-5 h-5" />
+            <span>Filter</span>
+          </button>
 
-<button className="flex items-center justify-center gap-2 w-28 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow">
-  <Download className="w-5 h-5" />
-  <span>Export</span>
-</button>
+          <button className="flex items-center justify-center gap-2 w-28 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow">
+            <Download className="w-5 h-5" />
+            <span>Export</span>
+          </button>
 
           </div>
         </div>
