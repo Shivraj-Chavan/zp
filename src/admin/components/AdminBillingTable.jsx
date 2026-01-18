@@ -15,26 +15,26 @@ export default function AdminBillingTable({ data }) {
   
     return (
       <div className="overflow-x-auto bg-white rounded-xl shadow">
-        <table className="w-full border text-sm">
+        <table className="w-full text-sm">
   
           {/* HEADER */}
           <thead>
             <tr className="bg-green-100">
-              <th rowSpan="2" className="border px-2">Sr No</th>
-              <th rowSpan="2" className="border px-2">Property No</th>
-              <th rowSpan="2" className="border px-2">Property Holder</th>
+              <th rowSpan="2" className=" px-2">Sr No</th>
+              <th rowSpan="2" className=" px-2">Property No</th>
+              <th rowSpan="2" className=" px-2">Property Holder</th>
   
-              <th colSpan="3" className="border px-2">Property Tax</th>
-              <th colSpan="3" className="border px-2">Water Charge</th>
-              <th colSpan="3" className="border px-2">Other Tax</th>
+              <th colSpan="3" className=" px-2">Property Tax</th>
+              <th colSpan="3" className=" px-2">Water Charge</th>
+              <th colSpan="3" className=" px-2">Other Tax</th>
   
-              <th rowSpan="2" className="border px-2">Total</th>
+              <th rowSpan="2" className=" px-2">Total</th>
             </tr>
   
             <tr className="bg-green-50">
-              {Array(3).fill("Pending").map((_, i) => <th key={`ptp${i}`} className="border">Pending</th>)}
-              {Array(3).fill("Penalty").map((_, i) => <th key={`ptpe${i}`} className="border">Penalty</th>)}
-              {Array(3).fill("Current").map((_, i) => <th key={`ptc${i}`} className="border">Current</th>)}
+              {Array(3).fill("Pending").map((_, i) => <th key={`ptp${i}`} className="">Pending</th>)}
+              {Array(3).fill("Penalty").map((_, i) => <th key={`ptpe${i}`} className="">Penalty</th>)}
+              {Array(3).fill("Current").map((_, i) => <th key={`ptc${i}`} className="">Current</th>)}
             </tr>
           </thead>
   

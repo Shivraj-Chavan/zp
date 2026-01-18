@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, FileText, Calendar, IndianRupee, Home, Droplet, Building2, Users, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
-import { getAllBills } from "../admin/services/billApi";
+import { getAllBills, getConsumerBill } from "../admin/services/billApi";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -138,7 +138,7 @@ const TaxPaymentPage = ({ language = 'en' }) => {
       setError("");
       setHasSearched(true);
   
-      const res = await getAllBills();
+      const res = await getConsumerBill(consumerNo.trim());
       const bills = res.data?.bills || res.data || res.bills || [];
   
       const mappedBills = bills.map(bill => ({
@@ -263,12 +263,12 @@ const TaxPaymentPage = ({ language = 'en' }) => {
               )}
             </button>
           </div>
-          {error && (
+          {/* {error && (
            <p className="mt-3 text-red-500 text-sm font-medium">
            {t("tax_payment.enterProperty")}
          </p>
          
-          )}
+          )} */}
         </div>
 
         {/* Filter Section */}

@@ -58,6 +58,9 @@ export const getAllBills = (params) =>
 export const getBillById = (id) =>
   API.get(`/bills/${id}`);
 
+export const getConsumerBill = (id) =>
+  API.get(`/bills/consumer/${id}`);
+
 
 export const uploadBillsExcel = (formData) =>
   API.post("/bills/upload-excel", formData, {
